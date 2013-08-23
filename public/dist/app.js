@@ -31,12 +31,14 @@ saveData = function() {
     val2: val2,
     val3: val3
   };
-  $listOfShit.append(val1 + val2 + val3);
-  $.ajax('some/fake/endpoint', {
+  return $.ajax('some/fake/endpoint', {
     method: "POST",
+    dataType: "json",
     data: data
+  }).then(function(data) {
+    $listOfShit.append(data.val1 + data.val2 + data.val3);
+    return resetForm();
   });
-  return resetForm();
 };
 
 $myModalButton.on('click', function() {

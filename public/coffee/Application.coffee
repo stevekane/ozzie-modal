@@ -19,13 +19,14 @@ saveData = ->
   val3 = input3.val()
   data = {val1: val1, val2: val2, val3: val3}
 
-  $listOfShit.append(val1 + val2 + val3)
   $.ajax('some/fake/endpoint', {
     method: "POST"
+    dataType: "json"
     data: data
-  })
-
-  resetForm()
+  }).then((data) ->
+    $listOfShit.append(data.val1 + data.val2 + data.val3)
+    resetForm()
+  )
 
 $myModalButton.on 'click', -> $myModal.modal 'toggle'
 $myModalSaveButton.on 'click', saveData

@@ -17,6 +17,11 @@ app.use(express.session({
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.post('/some/fake/endpoint', function (req, res, err) {
+  console.log(req.body); 
+  res.send(req.body);
+});
+
 // development only
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
