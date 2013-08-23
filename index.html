@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="public/vendor/normalize.css" >
-  <link rel="stylesheet" href="public/vendor/foundation.css" >
+  <link rel="stylesheet" href="public/vendor/bootstrap/css/bootstrap.css" >
   <link rel="stylesheet" href="public/dist/appsass.css" >
 </head>
 <body>
@@ -13,16 +13,42 @@
   <!-- <script src="public/vendor/jquery-1.10.2.js"></script> -->
 
   <script src="public/vendor/jquery-2.0.3.js"></script>
-  <script src="public/vendor/handlebars-1.0.0.js"></script>
-  <script src="public/vendor/emblem.js"></script>
-
-  <script src="public/vendor/ember-latest.js"></script>
-  <script src="public/vendor/ember-model.js"></script>
+  <script src="public/vendor/bootstrap/js/bootstrap.js"></script>
   <script src="public/vendor/minispade.js"></script>
-
-  <script src="public/dist/apptemplates.js"></script>
-  <script src="public/dist/emblemtemplates.js"></script>
   <script src="public/dist/app.js"></script>
+
+  <a id="myModalButton" href="#myModal" class="btn">Show Modal</a>
+
+  <div id="myModal" class="modal hide fade" tabindex="-1">
+    <div class="modal-header">
+      <h3 id="myModalLabel">Yo dis is a modal</h3>
+    </div>
+
+    <div class="modal-body">
+      <form>
+        <fieldset>
+
+          <legend>Create a new thing</legend>
+
+          <label>Thing One</label>
+          <input id="input1" type="text" placeholder="type somethin guy"></input>
+          <label>Thing Two</label>
+          <input id="input2" type="text" placeholder="type moar guy"></input>
+          <label>Thing Three</label>
+          <input id="input3" type="text" placeholder="type 4srs guy"></input>
+
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Close</button>     
+      <button id="myModalSave" class="btn btn-primary">Save</button>     
+    </div>
+  </div>
+
+  <div id="listOfShit">
+  </div>
 
   <script>
     minispade.require('Application.js');
